@@ -22,3 +22,17 @@ Qu'est-ce que NaN, et pourquoi NaN === NaN renvoie false ? Quelle fonction utili
 // ✍️ Ton code ici 👇 (règles : const/let, ===, gabarits littéraux, fonctions fléchées, camelCase)
 
 
+// Explication du bug :
+// saisie est de type string. L'opérateur + effectue une concaténation du texte ('2500' + 500 = 2500500) au lieu d'une addition numérique.
+const saisie = '2500';
+console.log(saisie + 500);
+
+// Correction avec Number() :
+console.log(Number(saisie) + 500);
+
+// Prédictions avant de tester :
+// Number('') -> 0 (chaîne vide convertie en 0)
+// Number('abc') -> NaN (texte non numérique)
+// Number(' 42 ') -> 42 (les espaces autour sont ignorés)
+// Number(true) -> 1 (le booléen true vaut 1)
+console.log(Number(''), Number('abc'), Number(' 42 '), Number(true));
