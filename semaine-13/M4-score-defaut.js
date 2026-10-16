@@ -23,4 +23,24 @@ Que fait l'opérateur ?? (coalescence des nuls) et en quoi est-il différent de 
 
 // ✍️ Ton code ici 👇 (règles : const/let, ===, gabarits littéraux, fonctions fléchées, camelCase)
 
+// Version avec bug (||) :
+// Avec ||, 0 est considéré comme falsy, donc 0 || 'aucun' évalue la seconde opérande et renvoie 'aucun'.
+const afficherScoreBug = (score) => `Score : ${score || 'aucun'}`;
 
+// Test de la version avec bug :
+console.log(afficherScoreBug(15));
+console.log(afficherScoreBug(0));
+console.log(afficherScoreBug(undefined));
+
+// Version corrigée avec l'opérateur de coalescence des nuls (??) :
+// ?? ne remplace la valeur que si celle-ci vaut strictement null ou undefined (0 est conservé).
+const afficherScore = (score) => `Score : ${score ?? 'aucun'}`;
+
+// Test de la version corrigée :
+console.log(afficherScore(15));
+console.log(afficherScore(0));
+console.log(afficherScore(undefined));
+
+// Bonus : court-circuit avec &&
+const estConnecte = true;
+estConnecte && console.log('Bienvenue !');
