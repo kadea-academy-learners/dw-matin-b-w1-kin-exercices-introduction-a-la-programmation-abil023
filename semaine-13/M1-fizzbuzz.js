@@ -20,4 +20,20 @@ Pourquoi FizzBuzz est-il célèbre dans les entretiens d'embauche de développeu
 
 // ✍️ Ton code ici 👇 (règles : const/let, ===, gabarits littéraux, fonctions fléchées, camelCase)
 
+for (let i = 1; i <= 30; i++) {
+  if (i % 3 === 0 && i % 5 === 0) {
+    console.log('MalewaWewa');
+  } else if (i % 3 === 0) {
+    console.log('Malewa');
+  } else if (i % 5 === 0) {
+    console.log('Wewa');
+  } else {
+    console.log(i);
+  }
+}
+
+/* 
+L'ordre des conditions est très important parce qu'il faut vérifier la condition qui teste à la fois le multiple de 3 et le multiple de 5. 
+Si on teste d'abord le multiple de 3 ou le multiple de 5, on ne vérifiera jamais la condition la plus spécifique.
+*/
 
